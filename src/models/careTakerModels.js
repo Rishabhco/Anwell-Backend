@@ -40,5 +40,11 @@ const careTakerSchema = new mongoose.Schema({
     }
 });
 
+careTakerSchema.virtual("animals", {
+    ref: "animal",
+    localField: "_id",
+    foreignField: "careTakerId",
+});
+
 const CareTaker = mongoose.model("caretaker", careTakerSchema);
 module.exports = CareTaker;
