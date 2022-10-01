@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const careTakerSchema = new mongoose.Schema({
     id:{
@@ -11,10 +12,9 @@ const careTakerSchema = new mongoose.Schema({
         unique: true,
         required: true,
         trim: true,
-        minLength: 6,
         validate(value) {
             if (!validator.isAlphanumeric(value)) {
-                throw new Error("Enter a valid username");
+                throw new Error("Enter a valid name");
             }
         },
     },
@@ -22,7 +22,7 @@ const careTakerSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        minLength: 7,
+        minLength: 10,
     },
     noOfAnimals:{
         type:Number,

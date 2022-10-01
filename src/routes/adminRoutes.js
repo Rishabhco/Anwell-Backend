@@ -8,6 +8,6 @@ router.get('/',adminController.home);
 router.post("/news",auth,adminController.createNews);
 
 router.post("/createCareTaker",auth,careTakerController.createCareTaker);
-router.get("/getAllCareTakers",auth,careTakerController.getAllCareTaker);
+router.get("/getAllCareTaker",auth,careTakerController.getAllCareTaker);
 
 module.exports=router
