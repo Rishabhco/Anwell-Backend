@@ -1,5 +1,6 @@
 const News=require("../models/newsModels");
 
+
 const home=(req,res)=>{
     try{
         res.status(200).send({
@@ -29,6 +30,8 @@ const createNews=async(req,res)=>{
         });
     }
 }
+
+
 
 module.exports={
     home,createNews
