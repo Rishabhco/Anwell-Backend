@@ -26,5 +26,11 @@ const animalSchema=new mongoose.Schema({
     }
 });
 
+animalSchema.virtual("animalmessages",{
+    ref:"animalmessage",
+    localField:"_id",
+    foreignField:"animalId"
+});
+
 const Animal=mongoose.model("animal",animalSchema);
 module.exports=Animal;
