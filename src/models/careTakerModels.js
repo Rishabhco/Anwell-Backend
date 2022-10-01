@@ -40,5 +40,5 @@ const careTakerSchema = new mongoose.Schema({
     }
 });
 
-const CareTaker = mongoose.model("Caretaker", careTakerSchema);
+const CareTaker = mongoose.model("caretaker", careTakerSchema);
 module.exports = CareTaker;
