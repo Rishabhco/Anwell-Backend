@@ -10,6 +10,7 @@ router.get("/",careTakerController.home);
 
 router.post("/createAnimals",auth,animalController.create);
 router.post("/getAnimal",auth,animalController.get);
+router.post("/getAnimalById",auth,animalController.getById);
 
 router.post("/getMessages",auth,careTakerActionController.get);
 router.post("/createMessage",auth,animalMessagesController.create);

@@ -32,6 +32,21 @@ const get=async(req,res)=>{
     }
 }
 
+const getById=async(req,res)=>{
+    try{
+        const animal=await Animal.findById(req.body.id);
+        res.status(200).send({  
+            message:"Animal",
+            animal
+        });
+    }catch(error){
+        res.status(400).send({
+            message:"Something went wrong",
+            error
+        });
+    }
+}
+
 module.exports={
-    create,get
+    create,get,getById
 }
