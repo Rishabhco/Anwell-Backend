@@ -31,8 +31,23 @@ const createNews=async(req,res)=>{
     }
 }
 
+const getNews=async(req,res)=>{
+    try{
+        const news=await News.find();
+        res.status(200).send({
+            message:"All News",
+            news
+        });
+    }
+    catch(error){
+        res.status(400).send({
+            message:"Something went wrong",
+            error
+        });
+    }
+}
 
 
 module.exports={
-    home,createNews
+    home,createNews,getNews
 }
